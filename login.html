@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background: #3383ec;
+            color: #6d63c5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            padding: 15px 50px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #00aaff;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00aaff;
+        }
+
+        .btn-primary {
+            padding: 6px 14px;
+            border: none;
+            background: #00aaff;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0088cc;
+        }
+
+        /* Form styling */
+        form#signupform {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        form h1 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        form input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        form input:focus {
+            border-color: #00aaff;
+            outline: none;
+            box-shadow: 0 0 4px rgba(0, 170, 255, 0.5);
+        }
+
+        form button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #00aaff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #0088cc;
+        }
+
+        #para {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 15px;
+            background: #cecbcb;
+            color: rgb(14, 1, 1);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: #00aaff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">E<span>Tracker</span></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="finance.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Contract.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Singup.html"><button class="btn-primary">SignUp</button></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="signupform">
+        <h1>Log in</h1>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <input type="password" id="confirm" placeholder="Confirm Password" required><br>
+        <button type="submit">Log in</button>
+
+    </form>
+    <footer>
+        <p>&copy; 2025 ETracker. All Rights Reserved.<br>Developed By <span>Me</span></p>
+    </footer>
+
+    <script>
+        let form = document.getElementById("signupform");
+        let para = document.getElementById("para");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirm = document.getElementById("confirm").value.trim();
+
+            if (name === "" || email === "" || password === "" || confirm === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            if (password !== confirm) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            alert("Signup successful!");
+            para.innerHTML = "You have signed up successfully.";
+
+            // Save data
+            localStorage.setItem("username", name);
+            localStorage.setItem("password", password);
+
+            // Redirect
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+
+</html>

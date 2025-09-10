@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body */
+        body {
+            background: linear-gradient(135deg, #f0f9ff, #cbebff);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: #0a1f44;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00c6ff;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #00c6ff;
+        }
+
+        /* Primary button */
+        .btn-primary {
+            background: #00c6ff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #0094cc;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #0a1f44;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .contact-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 20px;
+            color: #0a1f44;
+        }
+
+        /* Cards */
+        .card {
+            background: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card i {
+            margin-right: 10px;
+            color: #00c6ff;
+            font-size: 18px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover {
+            color: #00c6ff;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1f44;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: auto;
+        }
+
+        footer span {
+            color: #00c6ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">E<span>Tracker</span></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="finance.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Contract.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Singup.html"><button class="btn-primary">SignUp</button></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>
+        Get in Touch
+
+    </h1>
+    <section id="contact" class="contact-wrapper">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <div class="card"><i class="fab fa-whatsapp"></i><a href="https://wa.me/9193053660999"
+                        target="_blank">Chat on
+                        WhatsApp</a></div>
+                <div class="card"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/"
+                        target="_blank">Connect
+                        on LinkedIn</a></div>
+                <div class="card"><i class="fas fa-envelope"></i><a
+                        href="mailto:prankityadav25519@gmail.com">prankityadav25519@gmail.com</a>
+                </div>
+                <div class="card"><i class="fab fa-github"></i><a href="https://github.com/prankit2005"
+                        target="_blank">View
+                        GitHub</a></div>
+                <footer>
+                    <p>&copy; 2025 ETracker. All Rights Reserved.<br>Developed By <span>Me</span></p>
+                </footer>
+            </div>
+        </div>
+</body>
+
+</html>

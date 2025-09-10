@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up ETracker</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body */
+        body {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: #0a1f44;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00f2fe;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #00f2fe;
+        }
+
+        /* Signup container */
+        .container {
+            background: white;
+            width: 350px;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #0a1f44;
+        }
+
+        /* Input fields */
+        .container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .container input:focus {
+            border: 1px solid #00c6ff;
+        }
+
+        /* Buttons */
+        #signup-button,
+        .btn-primary {
+            background: #00c6ff;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #signup-button:hover,
+        .btn-primary:hover {
+            background: #0094cc;
+        }
+
+        /* Messages */
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            color: green;
+        }
+
+        /* Already have account link */
+        .container p a {
+            text-decoration: none;
+            color: #00c6ff;
+            font-weight: bold;
+        }
+
+        .container p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 15px;
+            background: #cecbcb;
+            color: rgb(14, 1, 1);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: #00aaff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">E<span>Tracker</span></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="finance.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Contract.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Singup.html"><button class="btn-primary">SignUp</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Create Account</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+
+        <button id="signup-button">Sign Up</button>
+        <p class="message" id="SignUpmessage"></p>
+        <p><a href="login.html">Already have an account? Login</a></p>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 ETracker. All Rights Reserved.<br>Developed By <span>Me</span></p>
+    </footer>
+
+
+    <script>
+
+        document.getElementById('signup-button').addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const messageElement = document.getElementById('SignUpmessage');
+
+            // Basic validation
+            if (!username || !email || !password || !confirmPassword) {
+                messageElement.textContent = 'All fields are required.';
+                messageElement.style.color = 'red';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                messageElement.textContent = 'Passwords do not match.';
+                messageElement.style.color = 'red';
+                return;
+            }
+
+            // Simulate account creation (in a real app, you'd send this data to a server)
+            messageElement.textContent = 'Account created successfully!';
+            messageElement.style.color = 'green';
+
+            // Clear the form
+            document.getElementById('username').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirm-password').value = '';
+        });
+    </script>
+</body>
+
+</html>
